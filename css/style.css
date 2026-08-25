@@ -55,45 +55,38 @@ img { max-width: 100%; }
 .unite-header .container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 20px;
   min-height: 80px;
 }
 
-.unite-header .logo { display: flex; align-items: center; }
+/* logo and spacer take equal width, so the phone number sits dead centre */
+.unite-header .logo {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
 .unite-header .logo img { display: block; max-height: 70px; max-width: 100%; }
 .unite-header .logo a { display: block; }
 .unite-header .logo a:hover { opacity: 0.6; transition: opacity 200ms ease; }
 
-/* phone call-to-action (formerly baked into the banner image) */
+.unite-header .nav { flex: 0 0 auto; display: flex; justify-content: center; }
+.unite-header .header-spacer { flex: 1 1 0; min-width: 0; }
+
+/* phone number — centred in the sticky bar, tap to call or text */
 .phone-cta {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 28px;
-  background: #37007d;
-  color: #ffffff;
-  text-align: center;
-  line-height: 1.15;
-  transition: background 200ms ease;
-}
-.phone-cta:hover { background: #4a00a5; }
-
-.phone-cta-label {
+  display: inline-block;
   font-family: "Josefin Sans", sans-serif;
-  font-size: 15px;
+  font-size: 32px;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.phone-cta-number {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 26px;
-  font-weight: 700;
+  line-height: 1.1;
   letter-spacing: 0.02em;
+  color: #37007d;
+  white-space: nowrap;
+  transition: opacity 200ms ease;
 }
+.phone-cta:hover { opacity: 0.65; }
 
 /* ==========================================================================
    Banner / hero
@@ -199,7 +192,7 @@ body.no-header-page .main-wrap { padding-top: 120px; }
   font-family: "Crimson Text", serif;
   font-size: 12px;
   font-weight: 300;
-  line-height: 1.1em;
+  line-height: 1.4;
   letter-spacing: 0.03em;
   color: #000000;
   margin: 0 auto 20px;
@@ -222,8 +215,8 @@ body.no-header-page .main-wrap { padding-top: 120px; }
 }
 .footer-wrap div.paragraph a[href]:hover { opacity: 0.4; }
 
-.footer-wrap .footer-size-4 { font-size: 18px; }
-.footer-wrap .footer-size-3 { font-size: 16px; }
+.footer-wrap .footer-size-4 { font-size: 30px; }
+.footer-wrap .footer-size-3 { font-size: 26px; }
 
 .footer-legal-links a { margin-right: 60px; }
 .footer-legal-links a:last-child { margin-right: 0; }
@@ -236,9 +229,7 @@ body.no-header-page .main-wrap { padding-top: 120px; }
   .unite-header .container { min-height: 40px; }
   .unite-header .logo img { max-height: 40px; }
 
-  .phone-cta { padding: 8px 18px; }
-  .phone-cta-label { font-size: 12px; }
-  .phone-cta-number { font-size: 20px; }
+  .phone-cta { font-size: 26px; }
 
   .banner-wrap .container { padding: 120px 20px 60px; }
   .main-wrap .container { padding: 30px 20px; }
@@ -253,9 +244,7 @@ body.no-header-page .main-wrap { padding-top: 120px; }
   #wsite-content h2 { font-size: 28px; line-height: 1.15; }
   #wsite-content div.paragraph { font-size: 16px; line-height: 1.5; }
 
-  .phone-cta { padding: 6px 14px; }
-  .phone-cta-label { font-size: 11px; letter-spacing: 0.06em; }
-  .phone-cta-number { font-size: 18px; }
+  .phone-cta { font-size: 22px; }
 
   .footer-legal-links a { margin-right: 24px; }
 }
@@ -263,6 +252,5 @@ body.no-header-page .main-wrap { padding-top: 120px; }
 @media screen and (max-width: 420px) {
   .unite-header { padding: 6px 12px; }
   .unite-header .container { gap: 10px; }
-  .phone-cta { padding: 6px 10px; }
-  .phone-cta-number { font-size: 16px; }
+  .phone-cta { font-size: 19px; }
 }
