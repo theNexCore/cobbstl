@@ -1,0 +1,268 @@
+/* ==========================================================================
+   Cobb Property Management — static rebuild
+   Replicates the original Weebly "Unite" theme presentation.
+   ========================================================================== */
+
+/* ---------- reset ---------- */
+ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, body, html,
+p, div.paragraph, blockquote, fieldset, input { margin: 0; padding: 0; }
+
+html { height: 100%; }
+
+body {
+  width: 100%;
+  min-height: 100%;
+  background: #ffffff;
+  color: #000000;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: inherit; text-decoration: none; }
+a img, a:hover img { border: none; }
+b, strong { font-weight: bold; }
+img { max-width: 100%; }
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Sticky header — the phone number lifted out of the banner image
+   ========================================================================== */
+.unite-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 12;
+  width: 100%;
+  max-width: 100%;
+  padding: 20px 40px;
+  color: #000000;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.unite-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 80px;
+}
+
+.unite-header .logo { display: flex; align-items: center; }
+.unite-header .logo img { display: block; max-height: 70px; max-width: 100%; }
+.unite-header .logo a { display: block; }
+.unite-header .logo a:hover { opacity: 0.6; transition: opacity 200ms ease; }
+
+/* phone call-to-action (formerly baked into the banner image) */
+.phone-cta {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 28px;
+  background: #37007d;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.15;
+  transition: background 200ms ease;
+}
+.phone-cta:hover { background: #4a00a5; }
+
+.phone-cta-label {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.phone-cta-number {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* ==========================================================================
+   Banner / hero
+   ========================================================================== */
+.banner-wrap {
+  position: relative;
+  color: #ffffff;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/hero-bg.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.banner-wrap .wsite-header-section {
+  display: flex;
+  align-items: center;
+  height: 592px;
+  box-sizing: border-box;
+}
+
+.banner-wrap .container { padding: 180px 40px 60px; }
+.banner-wrap .banner { position: relative; text-align: center; }
+
+.banner-wrap h2 {
+  color: inherit;
+  font-family: "Playfair Display", serif;
+  font-size: 90px;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -1px;
+  margin: 15px auto;
+}
+
+/* ==========================================================================
+   Main content
+   ========================================================================== */
+.main-wrap { width: 100%; background: #ffffff; }
+.main-wrap .container { padding: 60px 40px; }
+
+/* pages without a banner sit below the fixed header */
+body.no-header-page .main-wrap { padding-top: 120px; }
+
+#wsite-content h2 {
+  color: #37007d;
+  font-family: "Crimson Text", serif;
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1.1em;
+  letter-spacing: 0;
+  margin: 0 auto 20px;
+}
+
+#wsite-content div.paragraph {
+  color: #626262;
+  font-family: "Quattrocento", serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0.02em;
+  margin: 0 auto 30px;
+}
+
+#wsite-content div.paragraph a[href] {
+  color: inherit;
+  opacity: 0.7;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  transition: opacity 200ms ease-in-out;
+}
+#wsite-content div.paragraph a[href]:hover { opacity: 0.4; }
+
+/* image blocks */
+.wsite-image { padding-top: 10px; padding-bottom: 10px; }
+.wsite-image img { width: auto; max-width: 100%; }
+.wsite-image a { display: inline-block; }
+.wsite-image a:hover { opacity: 0.8; transition: opacity 200ms ease; }
+
+.text-center { text-align: center; }
+.text-right  { text-align: right; }
+
+/* legal pages (privacy policy / terms of use) */
+.legal-content div.paragraph { text-align: left; }
+.legal-content .legal-title { text-align: center; }
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer-wrap {
+  width: 100%;
+  font-size: 14px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.footer-wrap .wsite-footer {
+  position: relative;
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  box-sizing: border-box;
+}
+
+.footer-wrap h2 {
+  font-family: "Crimson Text", serif;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.1em;
+  letter-spacing: 0.03em;
+  color: #000000;
+  margin: 0 auto 20px;
+}
+
+.footer-wrap div.paragraph {
+  font-family: "Crimson Text", serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.75;
+  letter-spacing: 0.02em;
+  margin: 0 auto 20px;
+}
+
+.footer-wrap div.paragraph a[href] {
+  color: inherit;
+  opacity: 0.7;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  transition: opacity 200ms ease-in-out;
+}
+.footer-wrap div.paragraph a[href]:hover { opacity: 0.4; }
+
+.footer-wrap .footer-size-4 { font-size: 18px; }
+.footer-wrap .footer-size-3 { font-size: 16px; }
+
+.footer-legal-links a { margin-right: 60px; }
+.footer-legal-links a:last-child { margin-right: 0; }
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media screen and (max-width: 1024px) {
+  .unite-header { padding: 8px 20px; }
+  .unite-header .container { min-height: 40px; }
+  .unite-header .logo img { max-height: 40px; }
+
+  .phone-cta { padding: 8px 18px; }
+  .phone-cta-label { font-size: 12px; }
+  .phone-cta-number { font-size: 20px; }
+
+  .banner-wrap .container { padding: 120px 20px 60px; }
+  .main-wrap .container { padding: 30px 20px; }
+  body.no-header-page .main-wrap { padding-top: 80px; }
+  .footer-wrap .wsite-footer { padding: 30px 20px; }
+}
+
+@media screen and (max-width: 767px) {
+  .banner-wrap .wsite-header-section { height: auto; }
+  .banner-wrap .banner h2 { font-size: 9vmin; }
+
+  #wsite-content h2 { font-size: 28px; line-height: 1.15; }
+  #wsite-content div.paragraph { font-size: 16px; line-height: 1.5; }
+
+  .phone-cta { padding: 6px 14px; }
+  .phone-cta-label { font-size: 11px; letter-spacing: 0.06em; }
+  .phone-cta-number { font-size: 18px; }
+
+  .footer-legal-links a { margin-right: 24px; }
+}
+
+@media screen and (max-width: 420px) {
+  .unite-header { padding: 6px 12px; }
+  .unite-header .container { gap: 10px; }
+  .phone-cta { padding: 6px 10px; }
+  .phone-cta-number { font-size: 16px; }
+}
