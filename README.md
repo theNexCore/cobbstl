@@ -1,7 +1,7 @@
 # cobbstl.com
 
 Static rebuild of the Cobb Property Management site — plain HTML, CSS, and images.
-No build step, no JavaScript, no external requests.
+No build step and no framework; the only script is the Vercel Analytics tag.
 
 ## Structure
 
@@ -22,6 +22,10 @@ images/               Logo, hero photo, maintenance button
   sticky navigation CTA (`tel:` link) pinned to the top of every page.
 - Fonts are self-hosted instead of loaded from the Weebly CDN.
 - Cloudflare-obfuscated email addresses were decoded into working `mailto:` links.
+- Vercel Analytics is enabled via `<script defer src="/_vercel/insights/script.js">` on
+  every page. The path is served by Vercel itself, so it only reports when the
+  site is deployed there; on any other host it 404s harmlessly and nothing else
+  on the page is affected.
 
 Everything else — copy, layout, typography, favicon, images, footer — matches the
 original.
